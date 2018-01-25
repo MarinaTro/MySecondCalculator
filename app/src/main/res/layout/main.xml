@@ -1,18 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_padding_vertical"
+    android:paddingStart="@dimen/activity_padding_horizontal"
+    android:paddingLeft="@dimen/activity_padding_horizontal"
+    android:paddingEnd="@dimen/activity_padding_vertical"
+    android:paddingBottom="@dimen/activity_padding_vertical"
+    android:paddingRight="@dimen/activity_padding_vertical"
+    android:orientation="vertical"
     tools:context="com.example.mary.mysecondcalculator.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/displayRoot"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/displayBackground"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="end"
+            android:textSize="42sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/displayRoot"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <android.support.v7.widget.GridLayout
+            android:id="@+id/mainGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:columnCount="4">
+
+            <Button
+                android:id="@+id/btnSeven"
+                android:text="@string/Seven"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnEight"
+                android:text="@string/Eight"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnNine"
+                android:text="@string/Nine"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnPlus"
+                android:layout_width="0dp"
+                app:layout_gravity="fill_horizontal"
+                android:text="@string/Plus"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnFour"
+                android:text="@string/Four"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnFive"
+                android:text="@string/Five"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnSix"
+                android:text="@string/Six"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnMinus"
+                android:layout_width="0dp"
+                app:layout_gravity="fill_horizontal"
+                android:text="@string/Minus"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnThree"
+                android:text="@string/Three"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnTwo"
+                android:text="@string/Two"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnOne"
+                android:text="@string/One"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnMultiply"
+                android:layout_width="0dp"
+                app:layout_gravity="fill_horizontal"
+                android:text="@string/Multiply"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:text="@string/Cancel"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnZero"
+                android:text="@string/Zero"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnEquals"
+                android:text="@string/Equals"
+                android:textSize="20sp">
+            </Button>
+
+            <Button
+                android:id="@+id/btnDivide"
+                android:layout_width="0dp"
+                app:layout_gravity="fill_horizontal"
+                android:text="@string/Divide"
+                android:textSize="20sp">
+
+            </Button>
+
+        </android.support.v7.widget.GridLayout>
+    </FrameLayout>
+</RelativeLayout>
